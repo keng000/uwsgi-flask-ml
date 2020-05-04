@@ -6,4 +6,4 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 COPY myapp /var/www/myapp
 ENV PYTHONPATH="$PYTHONPATH:/var/www"
-CMD ["uwsgi", "--ini", "/var/www/myapp/config/myapp.ini"]
+ENTRYPOINT ["uwsgi", "--ini", "/var/www/myapp/config/myapp.ini"]
