@@ -16,7 +16,7 @@ net.eval()
 @app.route("/estimate", methods=["GET"])
 def estimate():
     dummy = torch.rand(1, 3, 32, 32)
-    net(dummy)
+    net(dummy) # <- here, the process will stuck
 
     return "OK", 200
 
